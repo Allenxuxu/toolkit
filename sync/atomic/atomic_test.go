@@ -1,4 +1,4 @@
-package sync
+package atomic
 
 import (
 	"math/rand"
