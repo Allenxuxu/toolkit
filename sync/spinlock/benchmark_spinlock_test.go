@@ -12,7 +12,7 @@ func BenchmarkSpinLock(b *testing.B) {
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
 			mu.Lock()
-			mu.Unlock()
+			mu.Unlock() // nolint
 		}
 	})
 }
@@ -24,7 +24,7 @@ func BenchmarkMutex(b *testing.B) {
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
 			mu.Lock()
-			mu.Unlock()
+			mu.Unlock() // nolint
 		}
 	})
 }
