@@ -24,8 +24,11 @@ func (q *queue) Push(v interface{}) {
 
 func (q *queue) Pop() interface{} {
 	v := q.list.Front()
-	q.list.Remove(v)
-	return v.Value
+	if v == nil {
+		return nil
+	}
+
+	return q.list.Remove(v)
 }
 
 func (q *queue) Len() int {

@@ -23,8 +23,11 @@ func (s *stack) Push(v interface{}) {
 
 func (s *stack) Pop() interface{} {
 	v := s.list.Front()
-	s.list.Remove(v)
-	return v.Value
+	if v == nil {
+		return nil
+	}
+
+	return s.list.Remove(v)
 }
 
 func (s *stack) Len() int {

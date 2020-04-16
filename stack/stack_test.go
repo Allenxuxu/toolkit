@@ -22,3 +22,11 @@ func TestStack(t *testing.T) {
 		}
 	}
 }
+
+func TestStack_Pop(t *testing.T) {
+	q := New()
+
+	if q.Pop() != nil {
+		t.Fatal()
+	}
+}

@@ -22,3 +22,11 @@ func TestQueue(t *testing.T) {
 		}
 	}
 }
+
+func TestQueue_Pop(t *testing.T) {
+	q := New()
+
+	if q.Pop() != nil {
+		t.Fatal()
+	}
+}
