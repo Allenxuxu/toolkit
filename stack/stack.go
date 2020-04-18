@@ -22,7 +22,7 @@ func (s *stack) Push(v interface{}) {
 }
 
 func (s *stack) Pop() interface{} {
-	v := s.list.Front()
+	v := s.list.Back()
 	if v == nil {
 		return nil
 	}

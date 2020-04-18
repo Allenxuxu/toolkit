@@ -15,7 +15,7 @@ func TestStack(t *testing.T) {
 	if 10 != s.Len() {
 		t.Fatal()
 	}
-	for i := 0; i < 10; i++ {
+	for i := 9; i > 0; i-- {
 		v := s.Pop()
 		if v.(int) != i {
 			t.Fatal()
