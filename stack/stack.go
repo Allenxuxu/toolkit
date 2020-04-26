@@ -30,6 +30,15 @@ func (s *stack) Pop() interface{} {
 	return s.list.Remove(v)
 }
 
+func (s *stack) Peek() interface{} {
+	v := s.list.Back()
+	if v == nil {
+		return nil
+	}
+
+	return v.Value
+}
+
 func (s *stack) Len() int {
 	return s.list.Len()
 }

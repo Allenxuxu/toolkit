@@ -31,6 +31,15 @@ func (q *queue) Pop() interface{} {
 	return q.list.Remove(v)
 }
 
+func (q *queue) Peek() interface{} {
+	v := q.list.Front()
+	if v == nil {
+		return nil
+	}
+
+	return v.Value
+}
+
 func (q *queue) Len() int {
 	return q.list.Len()
 }
