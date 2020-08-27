@@ -6,12 +6,12 @@ type Bool struct {
 	b int32
 }
 
-func (a *Bool) Set(b bool) {
+func (a *Bool) Set(b bool) bool {
 	var newV int32
 	if b {
 		newV = 1
 	}
-	atomic.SwapInt32(&a.b, newV)
+	return atomic.SwapInt32(&a.b, newV) == 1
 }
 
 func (a *Bool) Get() bool {

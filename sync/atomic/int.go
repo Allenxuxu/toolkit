@@ -8,13 +8,13 @@ type Int32 struct {
 }
 
 // Add 计数增加 i ，减操作：Add(-1)
-func (a *Int32) Add(i int) {
-	atomic.AddInt32(&a.v, int32(i))
+func (a *Int32) Add(i int32) int32 {
+	return atomic.AddInt32(&a.v, i)
 }
 
 // Swap 交换值，并返回原来的值
-func (a *Int32) Swap(i int) int32 {
-	return atomic.SwapInt32(&a.v, int32(i))
+func (a *Int32) Swap(i int32) int32 {
+	return atomic.SwapInt32(&a.v, i)
 }
 
 // Get 获取值
@@ -28,13 +28,13 @@ type Int64 struct {
 }
 
 // Add 计数增加 i ，减操作：Add(-1)
-func (a *Int64) Add(i int) {
-	atomic.AddInt64(&a.v, int64(i))
+func (a *Int64) Add(i int64) int64 {
+	return atomic.AddInt64(&a.v, i)
 }
 
 // Swap 交换值，并返回原来的值
-func (a *Int64) Swap(i int) int64 {
-	return atomic.SwapInt64(&a.v, int64(i))
+func (a *Int64) Swap(i int64) int64 {
+	return atomic.SwapInt64(&a.v, i)
 }
 
 // Get 获取值
