@@ -7,7 +7,8 @@ type Int32 struct {
 	v int32
 }
 
-// Add 计数增加 i ，减操作：Add(-1)
+// Add 计数增加 i ，返回新值。
+// 减操作：Add(-1)
 func (a *Int32) Add(i int32) int32 {
 	return atomic.AddInt32(&a.v, i)
 }
@@ -27,7 +28,8 @@ type Int64 struct {
 	v int64
 }
 
-// Add 计数增加 i ，减操作：Add(-1)
+// Add 计数增加 i，返回新值。 
+// 减操作：Add(-1)
 func (a *Int64) Add(i int64) int64 {
 	return atomic.AddInt64(&a.v, i)
 }
