@@ -23,6 +23,10 @@ func (a *Int32) Get() int32 {
 	return atomic.LoadInt32(&a.v)
 }
 
+func (a *Int32) CompareAndSwap(old, new int32) bool {
+	return atomic.CompareAndSwapInt32(&a.v, old, new)
+}
+
 // Int64 提供原子操作
 type Int64 struct {
 	v int64
@@ -42,4 +46,8 @@ func (a *Int64) Swap(i int64) int64 {
 // Get 获取值
 func (a *Int64) Get() int64 {
 	return atomic.LoadInt64(&a.v)
+}
+
+func (a *Int64) CompareAndSwap(old, new int64) bool {
+	return atomic.CompareAndSwapInt64(&a.v, old, new)
 }

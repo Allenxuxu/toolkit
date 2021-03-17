@@ -21,6 +21,23 @@ func TestBool(t *testing.T) {
 	if isOk.Get() != false {
 		t.Fatal("expect false")
 	}
+
+	if isOk.CompareAndSwap(false, true) != true {
+		t.Fatal("expect true")
+	}
+
+	if isOk.CompareAndSwap(true, true) != true {
+		t.Fatal("expect true")
+	}
+
+	if isOk.CompareAndSwap(true, true) != true {
+		t.Fatal("expect true")
+	}
+
+	ok := New(true)
+	if ok.Get() != true {
+		t.Fatal("expect true")
+	}
 }
 
 func TestInt32(t *testing.T) {
